@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroTech Login</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="header">
+    <img src="./images/spray-drone-future-of-farming-svgrepo-com.svg" alt="AgroTech" class="logo">
+</div>
+<h2 class="welcome-title">Welcome to AgroTech</h2>
+<div class="container">
+    <button id="loginBtn" class="toggle-button">Login</button>
+    <button id="registerBtn" class="toggle-button">Register</button>
+
+    <div id="loginForm" class="form hidden">
+        <span class="close-btn">&times;</span>
+        <h2>Login</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </div>
+    
+    <div id="registerForm" class="form hidden">
+        <span class="close-btn">&times;</span>
+        <h2>Register</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button type="submit">Register</button>
+    </div>
+    
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
