@@ -115,3 +115,91 @@ body, html {
         width: 100%;
     }
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+}
+
+.nav-buttons {
+    display: flex;
+}
+
+.nav-button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+.plant-entry {
+    background: #f3f3f3;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.plant-menu ul {
+    list-style-type: none;
+}
+
+.plant-menu li {
+    margin-top: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+    gap: 10px; /* Slight gap between grid items for better separation */
+    justify-content: center; /* Center the grid horizontally */
+    align-items: center; /* Center the grid vertically */
+    padding: 20px; /* Padding around the entire grid */
+    max-width: 450px; /* Limit maximum width */
+    margin: 40px auto; /* Center grid container horizontally and add vertical spacing */
+    background-color: #f7f7f7; /* Light background for the grid container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.grid-item {
+    text-align: center; /* Center text and images in grid items */
+    background-color: #fff; /* White background for each item */
+    border: 2px solid #ccc; /* Soft border for each grid item */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    padding: 20px; /* Ample padding inside grid items */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interaction */
+}
+
+.grid-item a {
+    color: #333; /* Darker text for better readability */
+    text-decoration: none; /* No underline */
+    display: block; /* Block display to fill grid item */
+    height: 100%; /* Ensure full height */
+}
+
+.grid-item a img {
+    width: 60px; /* Slightly larger images */
+    height: 60px; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space between image and text */
+}
+
+.grid-item a span {
+    display: block; /* Block display for better control */
+    font-size: 1.2em; /* Larger font size */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+.grid-item:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for a 'pop' effect */
+}
