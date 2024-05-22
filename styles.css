@@ -203,3 +203,95 @@ body, html {
     transform: translateY(-5px); /* Slight lift effect on hover */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for a 'pop' effect */
 }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.navbar {
+    background-color: green;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color:green;
+}
+
+.logo {
+    height: 50px;
+    margin: 10px;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.plant-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.plant-item {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.plant-item:hover {
+    background-color: #367c39;
+}
+
+.add-plant {
+    margin-top: 20px;
+}
+
+.add-plant input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.add-plant button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.add-plant button:hover {
+    background-color: #367c39;
+}
