@@ -14,172 +14,54 @@ function toggleForm(formId) {
     }
 }
 
-document.getElementById('loginBtn').addEventListener('click', function() {
+document.getElementById('loginBtn').addEventListener('click', function () {
     toggleForm('loginForm');
 });
 
-document.getElementById('registerBtn').addEventListener('click', function() {
+document.getElementById('registerBtn').addEventListener('click', function () {
     toggleForm('registerForm');
 });
 
 document.querySelectorAll('.close-btn').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         const form = this.parentElement;
         form.style.display = 'none';
         form.classList.remove('active');
     });
 });
 
-function validateForm(form) {
-    let isValid = true;function toggleForm(formId) {
-        const form = document.getElementById(formId);
-        const otherFormId = formId === 'loginForm' ? 'registerForm' : 'loginForm';
-        const otherForm = document.getElementById(otherFormId);
-    
-        if (form.style.display === 'none') {
-            form.style.display = 'flex';
-            setTimeout(() => form.classList.add('active'), 10);
-            otherForm.style.display = 'none';
-            otherForm.classList.remove('active');
-        } else {
-            form.style.display = 'none';
-            form.classList.remove('active');
-        }
-    }
-    
-    document.getElementById('loginBtn').addEventListener('click', function() {
-        toggleForm('loginForm');
-    });
-    
-    document.getElementById('registerBtn').addEventListener('click', function() {
-        toggleForm('registerForm');
-    });
-    
-    document.querySelectorAll('.close-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const form = this.parentElement;
-            form.style.display = 'none';
-            form.classList.remove('active');function toggleForm(formId) {
-    const form = document.getElementById(formId);
-    const otherFormId = formId === 'loginForm' ? 'registerForm' : 'loginForm';
-    const otherForm = document.getElementById(otherFormId);
+function handleLogin(event) {
+    event.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
 
-    if (form.style.display === 'none') {
-        form.style.display = 'flex';
-        setTimeout(() => form.classList.add('active'), 10);
-        otherForm.style.display = 'none';
-        otherForm.classList.remove('active');
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        alert('Login successful!');
+        window.location.href = 'index.html';
     } else {
-        form.style.display = 'none';
-        form.classList.remove('active');
+        alert('Invalid email or password');
     }
 }
 
-document.getElementById('loginBtn').addEventListener('click', function() {
-    toggleForm('loginForm');
-});
+function handleRegister(event) {
+    event.preventDefault();
+    const name = document.getElementById('registerName').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
 
-document.getElementById('registerBtn').addEventListener('click', function() {
-    toggleForm('registerForm');
-});
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const userExists = users.some(u => u.email === email);
 
-document.querySelectorAll('.close-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const form = this.parentElement;
-        form.style.display = 'none';
-        form.classList.remove('active');
-    });
-});
-
-function validateForm(form) {
-    let isValid = true;
-    form.querySelectorAll('input').forEach(input => {
-        if (!input.value.trim()) {
-            alert('Please fill out all fields');
-            isValid = false;
-            return;
-        }
-        if (input.type === 'email' && !input.value.includes('@')) {
-            alert('Please enter a valid email address');
-            isValid = false;
-            return;
-        }
-    });
-    return isValid;
-}
-
-document.querySelectorAll('.form button[type="submit"]').forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.preventDefault();
-        const form = this.closest('.form');
-        if (validateForm(form)) {
-            // Simulate form submission for demo purposes
-            alert('Form submitted successfully!');
-            form.style.display = 'none';
-            form.classList.remove('active');
-        }
-    });
-});
-
-        });
-    });
-    
-    function validateForm(form) {
-        let isValid = true;
-        form.querySelectorAll('input').forEach(input => {
-            if (!input.value.trim()) {
-                alert('Please fill out all fields');
-                isValid = false;
-                return;
-            }
-            if (input.type === 'email' && !input.value.includes('@')) {
-                alert('Please enter a valid email address');
-                isValid = false;
-                return;
-            }
-        });
-        return isValid;
+    if (userExists) {
+        alert('User already exists');
+    } else {
+        users.push({ name, email, password });
+        localStorage.setItem('users', JSON.stringify(users));
+        alert('Registration successful!');
+        toggleForm('loginForm');
     }
-    
-    document.querySelectorAll('.form button[type="submit"]').forEach(button => {
-        button.addEventListener('click', function(event) {
-            event.preventDefault();
-            const form = this.closest('.form');
-            if (validateForm(form)) {
-                // Simulate form submission for demo purposes
-                alert('Form submitted successfully!');
-                form.style.display = 'none';
-                form.classList.remove('active');
-            }
-        });
-    });
-    
-    form.querySelectorAll('input').forEach(input => {
-        if (!input.value.trim()) {
-            alert('Please fill out all fields');
-            isValid = false;
-            return;
-        }
-        if (input.type === 'email' && !input.value.includes('@')) {
-            alert('Please enter a valid email address');
-            isValid = false;
-            return;
-        }
-    });
-    return isValid;
 }
-
-document.querySelectorAll('.form button[type="submit"]').forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.preventDefault();
-        const form = this.closest('.form');
-        if (validateForm(form)) {
-            // Simulate form submission for demo purposes
-            alert('Form submitted successfully!');
-            form.style.display = 'none';
-            form.classList.remove('active');
-        }
-    });
-});
-
-

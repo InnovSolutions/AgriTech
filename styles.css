@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -16,8 +17,15 @@ body, html {
 }
 
 @keyframes logo-entry {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .welcome-title {
@@ -28,8 +36,13 @@ body, html {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .container {
@@ -60,7 +73,7 @@ body, html {
     display: none;
     flex-direction: column;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background: white;
     border-radius: 8px;
     transition: transform 0.3s, opacity 0.3s;
@@ -72,7 +85,8 @@ body, html {
     transform: scale(1.05);
 }
 
-.form input, .form button {
+.form input,
+.form button {
     padding: 10px;
     margin-top: 10px;
     width: 100%;
@@ -99,9 +113,11 @@ body, html {
     .container {
         width: 90%;
     }
+
     .form {
         width: 90%;
     }
+
     .logo {
         height: 60px;
     }
@@ -111,7 +127,9 @@ body, html {
     .toggle-button {
         width: 80%;
     }
-    .form input, .form button {
+
+    .form input,
+    .form button {
         width: 100%;
     }
 }
@@ -160,51 +178,66 @@ body, html {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
-    gap: 10px; /* Slight gap between grid items for better separation */
-    justify-content: center; /* Center the grid horizontally */
-    align-items: center; /* Center the grid vertically */
-    padding: 20px; /* Padding around the entire grid */
-    max-width: 450px; /* Limit maximum width */
-    margin: 40px auto; /* Center grid container horizontally and add vertical spacing */
-    background-color: #f7f7f7; /* Light background for the grid container */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 450px;
+    margin: 40px auto;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid black;
 }
 
 .grid-item {
-    text-align: center; /* Center text and images in grid items */
-    background-color: #fff; /* White background for each item */
-    border: 2px solid #ccc; /* Soft border for each grid item */
-    border-radius: 8px; /* Rounded corners for aesthetics */
-    padding: 20px; /* Ample padding inside grid items */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interaction */
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .grid-item a {
-    color: #333; /* Darker text for better readability */
-    text-decoration: none; /* No underline */
-    display: block; /* Block display to fill grid item */
-    height: 100%; /* Ensure full height */
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    height: 100%;
 }
 
 .grid-item a img {
-    width: 60px; /* Slightly larger images */
-    height: 60px; /* Maintain aspect ratio */
-    margin-bottom: 15px; /* Space between image and text */
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
 }
 
 .grid-item a span {
-    display: block; /* Block display for better control */
-    font-size: 1.2em; /* Larger font size */
-    font-weight: bold; /* Bold text for emphasis */
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .grid-item:hover {
-    transform: translateY(-5px); /* Slight lift effect on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover for a 'pop' effect */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-body, html {
+.plant-box button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.plant-box button:hover {
+    background-color: #367c39;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -237,7 +270,7 @@ body, html {
 }
 
 .navbar li a:hover {
-    background-color:green;
+    background-color: green;
 }
 
 .logo {
