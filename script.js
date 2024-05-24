@@ -146,3 +146,4 @@ function checkAuthentication() {
         window.location.href = 'login.html';
     }
 }
+
