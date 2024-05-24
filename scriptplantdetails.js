@@ -226,3 +226,15 @@ function addPlant() {
 
     document.getElementById('newPlantName').value = '';
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const plantName = urlParams.get('name');
+    
+    if (plantName) {
+        const plantNameContainer = document.getElementById('plantNameContainer');
+        plantNameContainer.textContent = `Plant Name: ${plantName}`;
+    } else {
+        // Handle the case where no plant name is found in the URL parameters
+        alert('No plant name specified in the URL');
+    }
+});
