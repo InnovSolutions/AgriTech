@@ -4,19 +4,16 @@ function getPlantName() {
     document.getElementById('plantName').textContent = plantName;
 }
 
-<<<<<<< HEAD
-document.addEventListener('DOMContentLoaded', getPlantName);
-=======
-document.getElementById('loginBtn').addEventListener('click', function() {
+document.getElementById('loginBtn').addEventListener('click', function () {
     toggleForm('loginForm');
 });
 
-document.getElementById('registerBtn').addEventListener('click', function() {
+document.getElementById('registerBtn').addEventListener('click', function () {
     toggleForm('registerForm');
 });
 
 document.querySelectorAll('.close-btn').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         const form = this.parentElement;
         form.style.display = 'none';
         form.classList.remove('active');
@@ -24,11 +21,11 @@ document.querySelectorAll('.close-btn').forEach(button => {
 });
 
 function validateForm(form) {
-    let isValid = true;function toggleForm(formId) {
+    let isValid = true; function toggleForm(formId) {
         const form = document.getElementById(formId);
         const otherFormId = formId === 'loginForm' ? 'registerForm' : 'loginForm';
         const otherForm = document.getElementById(otherFormId);
-    
+
         if (form.style.display === 'none') {
             form.style.display = 'flex';
             setTimeout(() => form.classList.add('active'), 10);
@@ -39,84 +36,84 @@ function validateForm(form) {
             form.classList.remove('active');
         }
     }
-    
-    document.getElementById('loginBtn').addEventListener('click', function() {
+
+    document.getElementById('loginBtn').addEventListener('click', function () {
         toggleForm('loginForm');
     });
-    
-    document.getElementById('registerBtn').addEventListener('click', function() {
+
+    document.getElementById('registerBtn').addEventListener('click', function () {
         toggleForm('registerForm');
     });
-    
+
     document.querySelectorAll('.close-btn').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const form = this.parentElement;
             form.style.display = 'none';
-            form.classList.remove('active');function toggleForm(formId) {
-    const form = document.getElementById(formId);
-    const otherFormId = formId === 'loginForm' ? 'registerForm' : 'loginForm';
-    const otherForm = document.getElementById(otherFormId);
+            form.classList.remove('active'); function toggleForm(formId) {
+                const form = document.getElementById(formId);
+                const otherFormId = formId === 'loginForm' ? 'registerForm' : 'loginForm';
+                const otherForm = document.getElementById(otherFormId);
 
-    if (form.style.display === 'none') {
-        form.style.display = 'flex';
-        setTimeout(() => form.classList.add('active'), 10);
-        otherForm.style.display = 'none';
-        otherForm.classList.remove('active');
-    } else {
-        form.style.display = 'none';
-        form.classList.remove('active');
-    }
-}
+                if (form.style.display === 'none') {
+                    form.style.display = 'flex';
+                    setTimeout(() => form.classList.add('active'), 10);
+                    otherForm.style.display = 'none';
+                    otherForm.classList.remove('active');
+                } else {
+                    form.style.display = 'none';
+                    form.classList.remove('active');
+                }
+            }
 
-document.getElementById('loginBtn').addEventListener('click', function() {
-    toggleForm('loginForm');
-});
+            document.getElementById('loginBtn').addEventListener('click', function () {
+                toggleForm('loginForm');
+            });
 
-document.getElementById('registerBtn').addEventListener('click', function() {
-    toggleForm('registerForm');
-});
+            document.getElementById('registerBtn').addEventListener('click', function () {
+                toggleForm('registerForm');
+            });
 
-document.querySelectorAll('.close-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const form = this.parentElement;
-        form.style.display = 'none';
-        form.classList.remove('active');
-    });
-});
+            document.querySelectorAll('.close-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const form = this.parentElement;
+                    form.style.display = 'none';
+                    form.classList.remove('active');
+                });
+            });
 
-function validateForm(form) {
-    let isValid = true;
-    form.querySelectorAll('input').forEach(input => {
-        if (!input.value.trim()) {
-            alert('Please fill out all fields');
-            isValid = false;
-            return;
-        }
-        if (input.type === 'email' && !input.value.includes('@')) {
-            alert('Please enter a valid email address');
-            isValid = false;
-            return;
-        }
-    });
-    return isValid;
-}
+            function validateForm(form) {
+                let isValid = true;
+                form.querySelectorAll('input').forEach(input => {
+                    if (!input.value.trim()) {
+                        alert('Please fill out all fields');
+                        isValid = false;
+                        return;
+                    }
+                    if (input.type === 'email' && !input.value.includes('@')) {
+                        alert('Please enter a valid email address');
+                        isValid = false;
+                        return;
+                    }
+                });
+                return isValid;
+            }
 
-document.querySelectorAll('.form button[type="submit"]').forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.preventDefault();
-        const form = this.closest('.form');
-        if (validateForm(form)) {
-            // Simulate form submission for demo purposes
-            alert('Form submitted successfully!');
-            form.style.display = 'none';
-            form.classList.remove('active');
-        }
-    });
-});
+            document.querySelectorAll('.form button[type="submit"]').forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const form = this.closest('.form');
+                    if (validateForm(form)) {
+                        // Simulate form submission for demo purposes
+                        alert('Form submitted successfully!');
+                        form.style.display = 'none';
+                        form.classList.remove('active');
+                    }
+                });
+            });
 
         });
     });
-    
+
     function validateForm(form) {
         let isValid = true;
         form.querySelectorAll('input').forEach(input => {
@@ -133,9 +130,9 @@ document.querySelectorAll('.form button[type="submit"]').forEach(button => {
         });
         return isValid;
     }
-    
+
     document.querySelectorAll('.form button[type="submit"]').forEach(button => {
-        button.addEventListener('click', function(event) {
+        button.addEventListener('click', function (event) {
             event.preventDefault();
             const form = this.closest('.form');
             if (validateForm(form)) {
@@ -146,7 +143,7 @@ document.querySelectorAll('.form button[type="submit"]').forEach(button => {
             }
         });
     });
-    
+
     form.querySelectorAll('input').forEach(input => {
         if (!input.value.trim()) {
             alert('Please fill out all fields');
@@ -163,7 +160,7 @@ document.querySelectorAll('.form button[type="submit"]').forEach(button => {
 }
 
 document.querySelectorAll('.form button[type="submit"]').forEach(button => {
-    button.addEventListener('click', function(event) {
+    button.addEventListener('click', function (event) {
         event.preventDefault();
         const form = this.closest('.form');
         if (validateForm(form)) {
@@ -219,10 +216,10 @@ function addPlant() {
 
     document.getElementById('newPlantName').value = '';
 }
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const plantName = urlParams.get('name');
-    
+
     if (plantName) {
         const plantNameContainer = document.getElementById('plantNameContainer');
         plantNameContainer.textContent = `Plant Name: ${plantName}`;
@@ -231,4 +228,3 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('No plant name specified in the URL');
     }
 });
->>>>>>> 26f2549267850c831994863c208f961ac5b33e11
