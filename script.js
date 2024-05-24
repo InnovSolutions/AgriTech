@@ -22,6 +22,13 @@ function toggleForm(formId) {
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
+    const body = document.body;
+
+    // Only check authentication on pages that require it
+    if (body.classList.contains('auth-required')) {
+        checkAuthentication();
+    }
+
     displayNavButtons();
 
     const loginBtn = document.getElementById('loginBtn');
@@ -119,10 +126,10 @@ function displayNavButtons() {
 
         // Add event listeners for the dynamically added buttons
         document.getElementById('loginBtn').addEventListener('click', function () {
-            toggleForm('loginForm');
+            window.location.href = 'login.html';
         });
         document.getElementById('registerBtn').addEventListener('click', function () {
-            toggleForm('registerForm');
+            window.location.href = 'login.html';
         });
     }
     console.log('Nav buttons updated');
