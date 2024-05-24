@@ -1,5 +1,20 @@
+function checkAuthentication() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (!currentUser) {
+        window.location.href = 'login.html';
+    }
+}
+
+function getUserPlantsKey() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    return `plants_${currentUser.id}`;
+}
+
 function loadPlants() {
-    const plants = JSON.parse(localStorage.getItem('plants')) || [];
+    checkAuthentication();
+
+    const plantsKey = getUserPlantsKey();
+    const plants = JSON.parse(localStorage.getItem(plantsKey)) || [];
     const plantContainer = document.getElementById('plantContainer');
     plantContainer.innerHTML = '';
 
@@ -44,17 +59,19 @@ function addPlant() {
         return;
     }
 
-    const plants = JSON.parse(localStorage.getItem('plants')) || [];
+    const plantsKey = getUserPlantsKey();
+    const plants = JSON.parse(localStorage.getItem(plantsKey)) || [];
     plants.push({ name: plantName });
-    localStorage.setItem('plants', JSON.stringify(plants));
+    localStorage.setItem(plantsKey, JSON.stringify(plants));
     loadPlants();
     document.getElementById('newPlantName').value = '';
 }
 
 function removePlant(plantName) {
-    let plants = JSON.parse(localStorage.getItem('plants')) || [];
+    const plantsKey = getUserPlantsKey();
+    let plants = JSON.parse(localStorage.getItem(plantsKey)) || [];
     plants = plants.filter(plant => plant.name !== plantName);
-    localStorage.setItem('plants', JSON.stringify(plants));
+    localStorage.setItem(plantsKey, JSON.stringify(plants));
     loadPlants();
 }
 

@@ -328,3 +328,10 @@ main {
 .add-plant button:hover {
     background-color: #367c39;
 }
+
+.navbar .nav-buttons span {
+    color: white;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
